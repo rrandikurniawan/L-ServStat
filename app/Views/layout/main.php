@@ -58,7 +58,7 @@
         <!-- Collapsible navigation links -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index" class="nav-item nav-link active">Home</a>
+                <a href="index" class="nav-item nav-link">Home</a>
                 <a href="about" class="nav-item nav-link">About</a>
                 <a href="services" class="nav-item nav-link">Services</a>
                 <a href="contact" class="nav-item nav-link">Contact</a>
