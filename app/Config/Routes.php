@@ -10,7 +10,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Rute untuk halaman utama
-$routes->get('/', 'Home::index'); // Memanggil method index pada controller Home
+$routes->get('/', 'Home::index'); // Memanggil method index pada controller Home untuk menampilkan halaman utama
+$routes->post('/', 'Home::pesan'); // Memproses data pemesanan via POST, memanggil method pesan pada controller Home
 $routes->get('/index', 'Home::index'); // Rute alternatif untuk halaman utama, memanggil method index pada controller Home
 
 // Rute untuk halaman statis
