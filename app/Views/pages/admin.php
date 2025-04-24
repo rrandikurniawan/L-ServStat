@@ -147,19 +147,10 @@
                           <td><?= $booking['waktu_dan_tanggal']?></td>
                           <td><?= $booking['note']?></td>
                           <td>
-                            <button class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure to delete this booking?')) window.location.href='/admin/delete/<?= $booking['id'] ?>'">Delete</button>
                           </td>
                         </tr>
                         <?php endforeach ?>
-                        <!-- Fungsi JavaScript untuk menghapus baris dari tabel -->
-                        <script>
-                          function deleteRow(button) {
-                            // Dapatkan elemen baris (tr) dari tombol yang diklik
-                            var row = button.closest("tr");
-                            // Hapus baris dari DOM
-                            row.remove();
-                          }
-                        </script>
                       </tbody>
                     </table>
                   </div>
