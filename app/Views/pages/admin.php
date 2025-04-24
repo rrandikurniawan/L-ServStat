@@ -20,7 +20,6 @@
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <!-- Navbar brand dan toggle untuk sidebar -->
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="admin"><img src="<?= base_url('backend/images/logo.svg')?>" alt="logo"/></a>
           <a class="navbar-brand brand-logo-mini" href="admin"><img src="<?= base_url('backend/images/logo-mini.svg')?>" alt="logo"/></a>
@@ -28,19 +27,18 @@
             <span class="typcn typcn-th-menu"></span>
           </button>
         </div>
-        <!-- Menu navigasi dan profil pengguna -->
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
-              <a class="nav-link dropdown-toggle pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
+              <a class="nav-link dropdown-toggle  pl-0 pr-0" href="#" data-toggle="dropdown" id="profileDropdown">
                 <i class="typcn typcn-user-outline mr-0"></i>
                 <span class="nav-profile-name">Administration</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="<?= base_url('/logout') ?>">
-                  <i class="typcn typcn-power text-primary"></i>
-                  Logout
-                </a>
+              <a class="dropdown-item" href="<?= base_url('/logout') ?>">
+                <i class="typcn typcn-power text-primary"></i>
+                Logout
+              </a>
               </div>
             </li>
           </ul>
@@ -55,7 +53,6 @@
       
       <!-- partial -->
       <!-- partial:../../partials/_sidebar.html -->
-      <!-- Sidebar navigasi -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -78,7 +75,6 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          <!-- Tabel daftar reservasi layanan (pending) -->
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -88,24 +84,51 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Service</th>
-                          <th>Date and Time</th>
-                          <th>Notes</th>
-                          <th>Actions</th>
+                          <th>
+                            ID
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Email
+                          </th>
+                          <th>
+                            Service
+                          </th>
+                          <th>
+                            Date and Time
+                          </th>
+                          <th>
+                            Notes
+                          </th>
+                          <th>
+                            Actions
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php foreach ($data['bookingpending'] as $booking):?>
+                        
                         <tr>
-                          <td><?= $booking['id']?></td>
-                          <td><?= $booking['name']?></td>
-                          <td><?= $booking['email']?></td>
-                          <td><?= $booking['nama_layanan']?></td>
-                          <td><?= $booking['waktu_dan_tanggal']?></td>
-                          <td><?= $booking['note']?></td>
+                          <td>
+                            <?= $booking['id']?>
+                          </td>
+                          <td>
+                            <?= $booking['name']?>
+                          </td>
+                          <td>
+                            <?= $booking['email']?>
+                          </td>
+                          <td>
+                            <?= $booking['nama_layanan']?>
+                          </td>
+                          <td>
+                            <?= $booking['waktu_dan_tanggal']?>
+                          </td>
+                          <td>
+                            <?= $booking['note']?>
+                          </td>
                           <td>
                             <button class="btn btn-success btn-sm" onclick="window.location.href='/admin/done/<?=$booking['id']?>'">Done</button>
                           </td>
@@ -118,7 +141,6 @@
               </div>
             </div>
           </div>
-          <!-- Tabel riwayat reservasi (selesai) -->
           <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -128,26 +150,52 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Service</th>
-                          <th>Date and Time</th>
-                          <th>Notes</th>
-                          <th>Actions</th>
+                          <th>
+                            ID
+                          </th>
+                          <th>
+                            Name
+                          </th>
+                          <th>
+                            Email
+                          </th>
+                          <th>
+                            Service
+                          </th>
+                          <th>
+                            Date and Time
+                          </th>
+                          <th>
+                            Notes
+                          </th>
+                          <th>
+                            Actions
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php foreach ($data['bookingdone'] as $booking):?>
                         <tr>
-                          <td><?= $booking['id']?></td>
-                          <td><?= $booking['name']?></td>
-                          <td><?= $booking['email']?></td>
-                          <td><?= $booking['nama_layanan']?></td>
-                          <td><?= $booking['waktu_dan_tanggal']?></td>
-                          <td><?= $booking['note']?></td>
                           <td>
-                            <button class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure to delete this booking?')) window.location.href='/admin/delete/<?= $booking['id'] ?>'">Delete</button>
+                            <?= $booking['id']?>
+                          </td>
+                          <td>
+                            <?= $booking['name']?>
+                          </td>
+                          <td>
+                            <?= $booking['email']?>
+                          </td>
+                          <td>
+                            <?= $booking['nama_layanan']?>
+                          </td>
+                          <td>
+                            <?= $booking['waktu_dan_tanggal']?>
+                          </td>
+                          <td>
+                            <?= $booking['note']?>
+                          </td>
+                          <td>
+                          <button class="btn btn-danger btn-sm" onclick="if(confirm('Are you sure to delete this booking?')) window.location.href='/admin/delete/<?= $booking['id'] ?>'">Delete</button>
                           </td>
                         </tr>
                         <?php endforeach ?>
@@ -161,7 +209,6 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
-        <!-- Footer halaman -->
         <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
               <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://github.com/rrandikurniawan/L-ServStat" target="_blank">L-ServStat</a> 2025</span>
