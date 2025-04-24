@@ -20,7 +20,7 @@ class BookingModel extends Model
 
     protected $useTimestamps = false;           // Nonaktifkan timestamps (created_at, updated_at)
 
-    // Method untuk mengambil semua data bookings
+    // Mengambil semua data booking dengan nama layanan dari tabel terkait
     public function getAllBookings()
     {
         return $this->db->table('bookings')
@@ -30,19 +30,19 @@ class BookingModel extends Model
             ->getResultArray();
     }
 
-    // Method untuk mengambil booking berdasarkan ID
+    // Mengambil data booking berdasarkan ID
     public function getBookingById($id)
     {
         return $this->find($id);
     }
 
-    // Method untuk menambahkan data booking baru
+    // Menambahkan data booking baru ke database
     public function createBooking($data)
     {
         return $this->insert($data);
     }
 
-    // Method untuk mengambil data bookings berdasarkan status is_done
+    // Mengambil data booking berdasarkan status is_done
     public function getBookingIsDone($is_done)
     {
         return $this->db->table('bookings')
@@ -53,9 +53,15 @@ class BookingModel extends Model
             ->getResultArray();
     }
 
-    // Method untuk memperbarui status is_done berdasarkan ID
+    // Memperbarui status is_done berdasarkan ID
     public function updateIsDone($id, $data) : bool
     {
         return $this->update($id, $data);
+    }
+
+    // Menghapus data booking berdasarkan ID
+    public function deleteBooking($id)
+    {
+        return $this->where('id', $id)->delete();
     }
 }
