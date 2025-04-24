@@ -14,7 +14,7 @@
     <meta content="" name="description">
 
     <!-- Favicon for branding in browser tab -->
-    <link href="<?= base_url('frontend/img/favicon.ico')?>" rel="icon">
+    <link rel="icon" type="image/png" href="<?= base_url('frontend/img/favicon.png') ?>">
 
     <!-- Google Fonts for consistent typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
