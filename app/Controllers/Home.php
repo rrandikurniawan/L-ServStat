@@ -24,13 +24,14 @@ class Home extends BaseController
         $name = $this->request->getPost('nama');
         $email = $this->request->getPost('email');
         $tanggal = $this->request->getPost('tanggal');
+        $pilihan = $this->request->getPost('pilihan_service');
         $pesan = $this->request->getPost('pesan');
 
         // Siapkan data untuk disimpan ke database
         $data = [
             'name' => $name,
             'email' => $email,
-            'layanan_id' => 1, // ID layanan default
+            'layanan_id' => $pilihan,
             'waktu_dan_tanggal' => $tanggal,
             'note' => $pesan,
             'is_done' => 0, // Status booking belum selesai
